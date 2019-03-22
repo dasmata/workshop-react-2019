@@ -1,5 +1,4 @@
 import React from 'react';
-import Loader from './Loader';
 import './App.scss';
 
 const data = [
@@ -9,7 +8,6 @@ const data = [
 ];
 
 const fetchExternalData = () => {
-    console.count('fetch');
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(data.shift() || []);
@@ -17,51 +15,39 @@ const fetchExternalData = () => {
     });
 };
 
-class App extends React.Component {
+class List extends React.Component {
 
     state = {
-        loading: true,
         data: [],
     };
-
-    static getDerivedStateFromProps (props, state) {
-        return state;
-    }
 
     constructor (props) {
         super(props);
     }
 
     componentDidMount () {
-        this.interval = setInterval(() => {
+        setInterval(() => {
             fetchExternalData().then((data) => {
                 this.setState({data: this.state.data.concat(data), loading: false});
             });
         }, 1000);
     }
 
-    componentDidUpdate () {
+    shouldComponentUpdate(nextProps, nextState){
+        return nextState.data.length !== this.state.data.length;
     }
 
-    componentWillUnmount () {
-        clearInterval(this.interval);
-    }
-
-    shouldComponentUpdate (nextProps, nextState) {
-        return nextState.loading !== this.state.loading
-            || nextState.data.length !== this.state.data.length;
+    componentDidUpdate(){
+        this.props.onData(this.state.data);
     }
 
     render () {
-        console.count('render');
-        return <Loader loading={this.state.loading}>
-            <ul>
+        return <ul>
                 {this.state.data.map((el, idx) => {
                     return <li key={idx}>{el.title}</li>;
                 })}
-            </ul>
-        </Loader>;
+            </ul>;
     }
 }
 
-export default App;
+export default List;
