@@ -1,11 +1,11 @@
 const config = {
-    mode: "development",
+    mode: 'development',
     entry: {
-        "main": "./src/js/main.js"
+        'main': './src/js/main.js',
     },
     output: {
         path: __dirname,
-        filename: 'main.js'
+        filename: 'main.js',
     },
     module: {
         rules: [
@@ -16,15 +16,22 @@ const config = {
                     loader: 'babel-loader',
                     options: {
                         presets: ['@babel/preset-env', '@babel/preset-react'],
-                        plugins: ["@babel/plugin-proposal-class-properties"],
+                        plugins: ['@babel/plugin-proposal-class-properties'],
                     },
 
-                }
-            }
-        ]
-    }
+                },
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader', // creates style nodes from JS strings
+                    'css-loader', // translates CSS into CommonJS
+                    'sass-loader' // compiles Sass to CSS, using Node Sass by default
+                ],
+            },
+        ],
+    },
 };
-
 
 module.exports = config;
 
