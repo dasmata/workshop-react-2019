@@ -1,8 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import memoize from "memoize-one";
 
-RadioGroupOption = ({value, label}) => (
-    <div className={"radio-group-item"}>
-        <input id={value} name={"form"} type={"radio"} value={value} />
+const RadioContext = React.createContext();
+
+
+const RadioGroupOption = ({ value, label }) => (
+    <div className="radio-group-item">
+        <RadioContext>
+            {context => (
+                <input
+                    id={value}
+                    name="form"
+                    type="radio"
+                    onChange={context.onChange}
+                    checked={context.value === value}
+                    value={value}
+                />
+            )}
+        </RadioContext>
         <label htmlFor={value}>{label || value}</label>
     </div>
 );
@@ -10,8 +25,24 @@ RadioGroupOption = ({value, label}) => (
 export default class RadioGroup extends Component {
     static Option = RadioGroupOption;
 
-    render () {
-        const {children} = this.props;
-        return <fieldset className={radio-group}>{children}</fieldset>
+    onChange = event => {
+        this.props.onChange(event.target.value);
+    };
+
+    getContext = memoize(value => {
+        return {
+            value,
+            onChange: this.onChange
+        };
+    });
+
+    render() {
+        const { children, value } = this.props;
+        const context = this.getContext(value);
+        return (
+            <RadioContext.Provider value={context}>
+                <fieldset className="radio-group">{children}</fieldset>
+            </RadioContext.Provider>
+        );
     }
 }
