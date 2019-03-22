@@ -17,6 +17,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-cli": "^6.26.0",
     "babel-loader": "^8.0.5",
+    "memoize-one": "^5.0.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "webpack": "^4.29.6",
