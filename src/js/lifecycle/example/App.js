@@ -1,10 +1,15 @@
 import React from "react";
+import Loader from "./Loader";
 
 
 class App extends React.Component {
 
-    static getDerivedStateFromProps(props, state){
+    state = {
+        loading: true
+    };
 
+    static getDerivedStateFromProps(props, state){
+        return state;
     }
 
     constructor(props){
@@ -32,6 +37,8 @@ class App extends React.Component {
     }
 
     render(){
-        return <Loader />;
+        return <Loader loading={this.state.loading} />;
     }
 }
+
+export default App;
