@@ -37,6 +37,9 @@ const config = {
             },
         ],
     },
+    devServer : {
+        port: 3031
+    }
 };
 
 module.exports = config;
