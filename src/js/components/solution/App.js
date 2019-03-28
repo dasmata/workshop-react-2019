@@ -1,12 +1,3 @@
-/**
- * * Build systems
- * * JSX
- * * ways to build a component
- * * iterations and variables
- * * data flow
- * * propTypes
- */
-
 import React, { Fragment, useEffect, useState } from 'react';
 import HelloWorld from './HelloWorld';
 import AppMenu from './AppMenu';
@@ -48,18 +39,26 @@ const App = (props) => {
     useEffect(()=>{
         history.listen((location, action) => {
             setPageURL(location.state.url);
-        })
+            document.title = location.state.title;
+        });
+        document.title = menuConfig.reduce((title, el)=>{
+            if(el.url === pageURL){
+                return el.title;
+            }
+            return title;
+        }, '');
     }, [1]);
 
     return (
         <Fragment>
             <section>
                 <header>
+                    <AppMenu config={menuConfig}/>
                 </header>
             </section>
             <section>
                 <main>
-                    <HelloWorld/>
+                    <Component/>
                 </main>
             </section>
             <section>

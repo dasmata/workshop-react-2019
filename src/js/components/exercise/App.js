@@ -1,11 +1,11 @@
 /**
- * * Build systems
- * * JSX
- * * ways to build a component
- * * iterations and variables
- * * data flow
- * * propTypes
- */
+ * Components exercise
+ *
+ * Convert all class components in function components
+ * using hooks where needed
+ *
+ * Bonus: Alter the document title with title from the menu config
+ * */
 
 import React, { Fragment, useEffect, useState } from 'react';
 import HelloWorld from './HelloWorld';
@@ -55,11 +55,12 @@ const App = (props) => {
         <Fragment>
             <section>
                 <header>
+                    <AppMenu config={menuConfig}/>
                 </header>
             </section>
             <section>
                 <main>
-                    <HelloWorld/>
+                    <Component/>
                 </main>
             </section>
             <section>

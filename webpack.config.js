@@ -38,7 +38,8 @@ const config = {
         ],
     },
     devServer : {
-        port: 3031
+        port: 3031,
+        historyApiFallback: true
     }
 };
 
