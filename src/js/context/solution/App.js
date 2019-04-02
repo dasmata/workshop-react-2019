@@ -34,15 +34,9 @@ export default class App extends Component {
     render () {
         return (
             <Context.Provider value={this.getContext()}>
-                <section>
                 <ElementsList/>
-                </section>
-                <div>
                 <AddButton/>
-                </div>
-                <div>
                 <Form/>
-                </div>
             </Context.Provider>
 
         );
