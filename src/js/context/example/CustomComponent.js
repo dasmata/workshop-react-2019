@@ -1,3 +1,3 @@
 import React from 'react';
 
-export default (props) => (props.render ? props.render() : props.children())
+export default ({onClick}) => (<a href={'javascript://'} onClick={onClick}>click me!</a>)
