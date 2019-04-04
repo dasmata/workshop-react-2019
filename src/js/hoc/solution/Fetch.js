@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import withErrorBoundary from './withErrorBoundaryHOC';
 
 const fakeFetch = url =>
     new Promise(resolve => {
@@ -13,29 +14,24 @@ class Fetch extends Component {
         error: null,
         data: null,
     };
-
-    componentDidMount () {
-        fakeFetch(this.props.url).then(data => {
+    componentDidMount() {
+        fakeFetch(this.props.url)
+        .then(data => {
             this.setState({
                 data,
                 loading: false,
             });
-        }).catch(err => {
+        })
+        .catch(err => {
             this.setState({
                 error: err,
                 loading: false,
             });
         });
     }
-
-    render () {
-        const {error, loading, data} = this.state;
-        if (error !== null) {
-            console.log(error);
-            return <p>Error {error}</p>;
-        }
-        return loading === true ? <p>Loading...</p> : <p>{data}</p>;
+    render() {
+        return this.props.children(this.state);
     }
 }
 
-export default Fetch;
+export default withErrorBoundary(Fetch);

@@ -12,7 +12,7 @@ class App extends Component {
                         console.log(error);
                         return <p>Error {error}</p>;
                     }
-                    return loading === true ? <p>Loading</p> : <p>{data}</p>;
+                    return loading === true ? <p>Loading...</p> : <p>{data}</p>;
                 }}
             </Fetch>
         );
