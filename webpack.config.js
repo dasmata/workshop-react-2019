@@ -22,6 +22,7 @@ const config = {
                         plugins: [
                             '@babel/plugin-proposal-class-properties',
                             '@babel/plugin-transform-spread',
+                            '@babel/plugin-syntax-dynamic-import',
                         ],
                     },
 
