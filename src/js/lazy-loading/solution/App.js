@@ -15,13 +15,13 @@ export default () => {
             <label className={`label ${activeTab === 3 ? 'active' : ''}`} onClick={()=>setActiveTab(3)}>third tab</label>
 
             <Suspense fallback={<div>Loading...</div>}>
-                {activeTab === 1 && <div className={'content'} id={'first-tab-panel'}>
+                {activeTab === 1 && <div className={'content'}>
                     <FirstTab/>
                 </div>}
-                {activeTab === 2 && <div className={'content'} id={'second-tab-panel'}>
+                {activeTab === 2 && <div className={'content'}>
                     <SecondTab/>
                 </div>}
-                {activeTab === 3 && <div className={'content'} id={'third-tab-panel'}>
+                {activeTab === 3 && <div className={'content'}>
                     <ThirdTab/>
                 </div>}
             </Suspense>
