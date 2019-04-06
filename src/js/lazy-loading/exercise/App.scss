@@ -1,0 +1,39 @@
+.tab-holder {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .state {
+    display: none;
+  }
+
+  label {
+    flex-grow: 1;
+    height: 40px;
+    display: inline-block;
+    background: #eee;
+    cursor: hand;
+    border-left: 10px solid #ccc;
+    &:hover {
+      background: white;
+    }
+  }
+  .content {
+    height: 300px;
+    display: none;
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  #first-tab:checked ~ #first-tab-label,
+  #second-tab:checked ~ #second-tab-label,
+  #third-tab:checked ~ #third-tab-label {
+    border-left: 10px solid hotpink;
+    background: white;
+  }
+
+  #first-tab:checked ~ #first-tab-panel,
+  #second-tab:checked ~ #second-tab-panel,
+  #third-tab:checked ~ #third-tab-panel {
+    display: block;
+  }
+}
