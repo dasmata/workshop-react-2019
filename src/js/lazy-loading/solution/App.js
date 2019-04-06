@@ -14,7 +14,7 @@ export default () => {
             <label className={`label ${activeTab === 2 ? 'active' : ''}`} onClick={()=>setActiveTab(2)}>second tab</label>
             <label className={`label ${activeTab === 3 ? 'active' : ''}`} onClick={()=>setActiveTab(3)}>third tab</label>
 
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div className={'content'}>Loading...</div>}>
                 {activeTab === 1 && <div className={'content'}>
                     <FirstTab/>
                 </div>}
