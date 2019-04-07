@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing the context solution add element 1`] = `
+<App>
+  <_default>
+    <ul />
+  </_default>
+  <_default>
+    <a
+      href="javascript://"
+      onClick={[Function]}
+    >
+      + Add element
+    </a>
+  </_default>
+  <Form>
+    <div
+      style={
+        Object {
+          "display": "block",
+        }
+      }
+    >
+      <input
+        onChange={[Function]}
+        placeholder="item text"
+        type="text"
+        value=""
+      />
+      <button
+        onClick={[Function]}
+      >
+        Add
+      </button>
+    </div>
+  </Form>
+</App>
+`;
+
+exports[`Testing the context solution renders initial snapshop 1`] = `
+Array [
+  <ul />,
+  <a
+    href="javascript://"
+  >
+    + Add element
+  </a>,
+  <div
+    style="display:none"
+  >
+    <input
+      placeholder="item text"
+      type="text"
+      value=""
+    />
+    <button>
+      Add
+    </button>
+  </div>,
+]
+`;

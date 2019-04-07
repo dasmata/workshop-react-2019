@@ -2,10 +2,12 @@ const config = {
     mode: 'development',
     entry: {
         'main': './src/js/main.js',
+        'native-exercise': './src/js/universal-components/exercise/App.js',
+        'native-solution': './src/js/universal-components/solution/App.js',
     },
     output: {
         path: __dirname,
-        filename: 'main.js',
+        filename: '[name].js',
     },
     module: {
         rules: [
@@ -38,9 +40,14 @@ const config = {
             },
         ],
     },
+    resolve: {
+        alias: {
+            'react-native$': 'react-native-web',
+        },
+    },
     devServer: {
         port: 3031,
-        historyApiFallback: true,
+        historyApiFallback: true
     },
 };
 
