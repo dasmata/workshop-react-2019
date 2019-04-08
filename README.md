@@ -23,5 +23,5 @@ Start the project
 ``` bash
 npm start
 ```
-The start command will tun Webpack Dev Server on port 3031 and the project will be accessible via http://localhost:3031
+The start command will run Webpack Dev Server on port 3031 and the project will be accessible via http://localhost:3031
 On accessing the project, a "Hello World!" message should be displayed.
