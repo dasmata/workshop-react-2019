@@ -1,33 +1,26 @@
-import React from 'react';
-import history from './browserHistory';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
-function handlePageChange (el) {
-    return () => {
-        history.push(el.url, el);
+export default class AppMenu extends Component {
+
+    handleItemClick = (idx) => {
+        if (!!this.props.config[idx]) {
+            console.log(this.props.config[idx]);
+            typeof this.props.onClick === 'function' && this.props.onClick(this.props.config[idx]);
+        } else {
+            console.error(`Invalid menu item index: ${idx}`);
+        }
     };
-}
 
-const AppMenu = ({config}) => {
-    if (!config || config.length === 0) {
-        return null;
-    }
-    return (
-        <menu>
+    render () {
+        const {config} = this.props;
+        return (<header>
             <ul>
-                {config.map((el) => {
-                    return <li key={el.url}><a href={'javascript://'} onClick={handlePageChange(el)}>{el.text}</a></li>;
+                {config.map((el, idx) => {
+                    return (<li key={`${idx}_${el}`}>
+                        <a href={'javascript://'} onClick={()=>this.handleItemClick(idx)} title={el}>{el}</a>
+                    </li>);
                 })}
             </ul>
-        </menu>
-    );
-};
-AppMenu.propTypes = {
-    config: PropTypes.arrayOf(PropTypes.shape({
-        text: PropTypes.string,
-        url: PropTypes.string,
-        title: PropTypes.string,
-    })).isRequired,
-};
-
-export default AppMenu;
+        </header>);
+    }
+}

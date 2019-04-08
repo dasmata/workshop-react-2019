@@ -4,7 +4,6 @@ import Adapter from 'enzyme-adapter-react-16';
 import toJson from 'enzyme-to-json';
 
 import App from '../context/solution/App';
-import AddButton from '../context/solution/AddButton';
 
 require('jsdom-global')();
 configure({adapter: new Adapter()});
