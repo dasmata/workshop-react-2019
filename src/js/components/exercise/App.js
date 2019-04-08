@@ -2,6 +2,10 @@
  * Components exercise
  *
  * Convert all class components in function components
+ * 
+ * Bonus objective: Create the menu from a config array, that is passed to a
+ * AppMenu component. The AppMenu component shoul receive through its props the 
+ * config and an onClick handler but also handle the click internally
  *
  * */
 
