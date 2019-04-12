@@ -18,10 +18,9 @@ class App extends React.Component {
     };
 
     restart = () => {
-        this.setState({loading: true, restart: true});
-        setTimeout(()=>{
+        this.setState({loading: true, restart: true}, ()=>{
             this.setState({restart: false});
-        })
+        });
     };
 
     constructor (props) {
