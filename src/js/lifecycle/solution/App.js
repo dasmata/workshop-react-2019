@@ -17,8 +17,11 @@ class App extends React.Component {
         loading: true,
     };
 
-    restart = ()=>{
-        this.setState({loading: true});
+    restart = () => {
+        this.setState({loading: true, restart: true});
+        setTimeout(()=>{
+            this.setState({restart: false});
+        })
     };
 
     constructor (props) {
@@ -28,12 +31,19 @@ class App extends React.Component {
     render () {
         return (
             <React.Fragment>
-                {this.state.loading && <Loader loading={this.state.loading} /> }
-                <List onData={(data)=>{
-                    if(data.length > 0){
-                        this.setState({loading: false})
+                {this.state.loading && <Loader loading={this.state.loading}/>}
+                {(() => {
+                    if(this.state.restart){
+                        return null;
                     }
-                }} />
+                    return <List onData={(data) => {
+                        if (data.length > 0) {
+                            this.setState({loading: false});
+                        }
+                    }}
+                    />;
+                })()}
+                {!this.state.loading && <a href={'javascript://'} onClick={this.restart}>RESTART</a>}
             </React.Fragment>
         );
     }

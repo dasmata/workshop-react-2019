@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import Counter from "./Counter";
+import Counter from './Counter';
 
 class App extends React.Component {
 
@@ -8,8 +8,10 @@ class App extends React.Component {
     };
 
     toggleText = () => {
-        this.setState({
-            visible: !this.state.visible,
+        this.setState((prevState)=>({
+            visible: !prevState.visible,
+        }), ()=>{
+            //after state
         });
     };
 
@@ -19,9 +21,12 @@ class App extends React.Component {
             <div>
                 {visible && <div>This text's visibility is controlled by state</div>}
                 <div>
-                    <div><a href={'javascript://'} onClick={this.toggleText}>{visible ? 'Hide' : 'Show'}</a></div>
+                    <div>
+                        <a href={'javascript://'}
+                           onClick={this.toggleText}>{visible ? 'Hide' : 'Show'}</a>
+                    </div>
                 </div>
-                <Counter visible={visible} />
+                <Counter visible={visible}/>
             </div>
         );
     }

@@ -8,6 +8,7 @@ const data = [
 ];
 
 const fetchExternalData = () => {
+    console.count('fetch');
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(data.shift() || []);
@@ -26,11 +27,15 @@ class List extends React.Component {
     }
 
     componentDidMount () {
-        setInterval(() => {
+        this.interval = setInterval(() => {
             fetchExternalData().then((data) => {
                 this.setState({data: this.state.data.concat(data), loading: false});
             });
-        }, 1000);
+        }, 2000);
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.interval);
     }
 
     shouldComponentUpdate(nextProps, nextState){
