@@ -1,10 +1,9 @@
 import React, { Suspense } from 'react';
 
+const LazyLoaded = React.lazy(() => import('./LazyLoaded'));
 
-const LazyLoaded = React.lazy(()=>import("./LazyLoaded"));
-
-export default ()=>(
+export default () => (
     <Suspense fallback={<div>Loading...</div>}>
-        <LazyLoaded />
+        <LazyLoaded/>
     </Suspense>
 )
