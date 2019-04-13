@@ -25,3 +25,26 @@ npm start
 ```
 The start command will run Webpack Dev Server on port 3031 and the project will be accessible via http://localhost:3031
 On accessing the project, a "Hello World!" message should be displayed.
+
+### Chapters ###
+
+#### Day 1 ####
+* basics
+* components
+* state
+* lifecycle
+* hooks
+* containers
+* forms
+* render-props
+
+#### Day 2 ####
+* context
+* error-boundries
+* compound-components
+* hoc
+* lazy-loading
+* universal-components
+* jest
+
+
