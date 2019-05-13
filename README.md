@@ -13,11 +13,11 @@ To install and run these examples you will need the following:
 ### Installation ###
 Clone the repository
 ``` bash
-git clone ssh://git@git.zitec.ro:6246/tiberiu.popovici/react-workshop-2019.git
+git clone https://github.com/dasmata/workshop-react-2019.git
 ```
 Run npm install
 ``` bash
-cd react-workshop-2019 && npm install
+cd workshop-react-2019 && npm install
 ```
 Start the project
 ``` bash
