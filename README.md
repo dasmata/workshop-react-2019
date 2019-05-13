@@ -44,7 +44,7 @@ On accessing the project, a "Hello World!" message should be displayed.
 * compound-components
 * hoc
 * lazy-loading
-* universal-components
+* state-reducer
 * jest
 
 
