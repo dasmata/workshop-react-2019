@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 
 class App extends React.Component {
