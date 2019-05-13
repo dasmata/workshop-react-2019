@@ -1,9 +1,7 @@
 const config = {
     mode: 'development',
     entry: {
-        'main': './src/js/main.js',
-        'native-exercise': './src/js/universal-components/exercise/App.js',
-        'native-solution': './src/js/universal-components/solution/App.js',
+        'main': './src/js/main.js'
     },
     output: {
         path: __dirname,
