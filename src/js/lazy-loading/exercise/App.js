@@ -8,6 +8,10 @@
  * the active tab should be inserted in the DOM using an App re-render
  * via state
  *
+ * The current tab mechanism will no longer be necessary and the input elements
+ * should be removed.
+ *
+ * Add a state to the App component that will keep track of the active tab
  */
 import React from 'react';
 import './App.scss';
