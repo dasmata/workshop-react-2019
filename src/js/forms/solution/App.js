@@ -1,4 +1,5 @@
 import React from 'react';
+import 'my.css';
 
 export default class App extends React.Component {
 
@@ -50,6 +51,7 @@ export default class App extends React.Component {
                         type={'text'}
                         value={this.state.first}
                         name={'first'}
+                        className={this.state.error === '' ? '' : 'error'}
                         onBlur={() => {this.validate();}}
                         onChange={(e) => {this.handleChange({name: e.target.name, value: e.target.value});}}
                     />

@@ -28,7 +28,7 @@ class List extends React.Component {
     componentDidMount () {
         setInterval(() => {
             fetchExternalData().then((data) => {
-                this.setState({data: this.state.data.concat(data), loading: false});
+                this.setState({data: this.state.data.concat(data)});
             });
         }, 1000);
     }

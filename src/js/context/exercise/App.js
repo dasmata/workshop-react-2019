@@ -1,7 +1,15 @@
 /**
  * Implement the basic CR(U)D functionality by using react context
- * Create context with all the items and the callbacks
- * Use App to render the context provider and to provide the context value
+ * Use App' state as a context containing with all the items and the callbacks
+ * Use App to render the context provider and to provide the context value:
+ * <Context.Provider value>
+ *   <ElementsList/>
+ *   <AddButton/>
+ *   <Form/>
+ * </Context.Provider>
+ * ElementsList, AddButton and Form should all be context consumers that either
+ * render elements or call callbacks that change elements list.
+ *
  */
 import React, { Component, Fragment } from 'react';
 import ElementsList from './ElementsList';

@@ -3,7 +3,7 @@
  *
  * Refactor the App component in such a way that all the logic
  * is moved in a LoginContainer.
- * LoginContainer should implement a on login method to notify App Componennt
+ * LoginContainer should implement a onLogin method to notify App Componennt
  * when the login occurs so that App can display de welcome message
  */
 import React from 'react';

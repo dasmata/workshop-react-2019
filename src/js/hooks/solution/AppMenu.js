@@ -22,6 +22,7 @@ const AppMenu = ({config}) => {
         </menu>
     );
 };
+
 AppMenu.propTypes = {
     config: PropTypes.arrayOf(PropTypes.shape({
         text: PropTypes.string,

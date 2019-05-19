@@ -1,14 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
-
-export default (props) => {
+export default ({bla}) => {
     const [count, setCount] = useState(0);
 
-    useEffect(()=>{
+    useEffect(() => {
         document.title = `You clicked ${count} times`;
     }, [count]);
 
     return (<div>
-        <button onClick={()=>setCount(count + 1)}>You clicked {count} times</button>
-    </div>)
+        <button onClick={() => setCount(count + 1)}>You clicked {count} times</button>
+    </div>);
 }

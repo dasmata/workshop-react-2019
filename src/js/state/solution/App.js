@@ -10,7 +10,9 @@ const getQuerySlide = () => {
 
 const App = () => {
     const {slide} = getQuerySlide();
-    return <Accordion activeSlide={parseInt(slide, 10)} />;
+    return <Accordion activeSlide={parseInt(slide, 10)}>
+        <div>casdfbgf</div>
+    </Accordion>;
 };
 
 export default App;

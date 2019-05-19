@@ -19,6 +19,10 @@ class App extends Component {
         console.log(e.target.title);
     };
 
+    handleClick(){
+        console.log(this);
+    }
+
     render () {
         return (
             <Fragment>

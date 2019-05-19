@@ -10,8 +10,8 @@
 import React, { Fragment } from 'react';
 import HelloWorld from './HelloWorld';
 
-
 const App = (props) => {
+    console.log(props);
     return (
         <Fragment>
             <section>

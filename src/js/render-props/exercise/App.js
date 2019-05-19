@@ -9,7 +9,7 @@ import Fetch from './Fetch';
 
 class App extends Component {
     render() {
-        return <Fetch />;
+        return <Fetch url={"www.google.com"} />;
     }
 }
 
