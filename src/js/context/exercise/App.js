@@ -1,6 +1,6 @@
 /**
  * Implement the basic CR(U)D functionality by using react context
- * Use App' state as a context containing with all the items and the callbacks
+ * Use App's state as a context containing with all the items and the callbacks
  * Use App to render the context provider and to provide the context value:
  * <Context.Provider value>
  *   <ElementsList/>

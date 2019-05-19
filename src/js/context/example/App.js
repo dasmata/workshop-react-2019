@@ -1,11 +1,25 @@
 import React from 'react';
-import CustomComponent from './CustomComponent'
-
-
-
+import CustomComponent from './CustomComponent';
+import Context from './LinkContext';
 
 export default class App extends React.Component {
-    render(){
-        return (<CustomComponent onClick={(e)=>console.log(e.currentTarget)}></CustomComponent>)
+
+    state = {
+        onClick : (e)=>console.log(e)
+    };
+
+    getValue () {
+        return this.state;
+    }
+
+    render () {
+        return (
+            <Context.Provider value={this.getValue()}>
+                <CustomComponent />
+                <div>
+
+                </div>
+            </Context.Provider>
+        );
     }
 }

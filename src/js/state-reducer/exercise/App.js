@@ -1,7 +1,7 @@
 /**
  * State reducer exercise
  *
- * Create 2 buttons that incremenet/decrement the quantity for each product
+ * Create 2 buttons that increment/decrement the quantity for each product
  * in the shopping cart. In order to do this, you should create 2 actions
  * ACTION_CART_INCREASE and ACTION_CART_DECREASE that will be processed by
  * the cart reducer
