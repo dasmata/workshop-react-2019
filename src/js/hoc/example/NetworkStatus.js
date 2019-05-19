@@ -16,7 +16,7 @@ function withOnlineStatus (WrappedComponent) {
             window.addEventListener('offline', this.handleOffline);
         }
 
-        componentWillUnount () {
+        componentWillUnmount () {
             window.removeEventListener('online', this.handleOnline);
             window.removeEventListener('offline', this.handleOffline);
         }
